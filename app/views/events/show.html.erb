@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @event.name %>
@@ -17,7 +15,7 @@
 
 <p>
   <strong>Date due:</strong>
-  <%= @event.date_due %>
+  <%= @event.date_time %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

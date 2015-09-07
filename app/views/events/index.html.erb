@@ -1,33 +1,136 @@
-<p id="notice"><%= notice %></p>
+      <!--    Striped Rows Table  -->
+      <div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="page-head-line">Remind Me</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <% flash.each do |name,msg| %>
+                <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success"} alert-dismissable", role: "alert" do %>
+                  <%= msg %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="dashboard-div-wrapper bk-clr-one">
+                fa_icon "venus", class: "dashboard-div-icon"
+                  <div class="progress progress-striped active">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                      </div>
+                  </div>
+                      <h5>Simple Text Here </h5>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="dashboard-div-wrapper bk-clr-two">
+                <i  class="fa fa-edit dashboard-div-icon" ></i>
+                  <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                    </div>
+                  </div>
+                  <h5>Simple Text Here </h5>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="dashboard-div-wrapper bk-clr-three">
+                <i  class="fa fa-cogs dashboard-div-icon" ></i>
+                  <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                    </div>
+                  </div>
+                    <h5>Simple Text Here </h5>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <div class="dashboard-div-wrapper bk-clr-four">
+                <i  class="fa fa-bell-o dashboard-div-icon" ></i>
+                  <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                    </div>
+                  </div>
+                    <h5>Simple Text Here </h5>
+              </div>
+            </div>
+          </div>
 
-<h1>Listing Events</h1>
+          <hr />
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th>Reminder type</th>
-      <th>Date due</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Date and Time</th>
+                      <th>Reminder type</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @events.each do |event| %>
+                      <tr>
+                        <td><%= event.name %></td>
+                        <td><%= event.date_time %></td>
+                        <td><%= event.reminder_type %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.user_id %></td>
-        <td><%= event.reminder_type %></td>
-        <td><%= event.date_due %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+          <hr />
 
-<br>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  Current Reminders
+                </div>
+                <div class="panel-body">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Date and Time</th>
+                          <th>Reminder type</th>
 
-<%= link_to 'New Event', new_event_path %>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% @events.each do |event| %>
+                          <tr>
+                            <td><%= event.name %></td>
+                            <td><%= event.date_time %></td>
+                            <td><%= event.reminder_type %></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="Compose-Message">
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    New Reminder
+                  </div>
+                  <div class="panel-body">
+                    <%= render 'form' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

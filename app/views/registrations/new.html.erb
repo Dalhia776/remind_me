@@ -1,0 +1,36 @@
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="page-head-line">Please Signup To Enter </h4>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                 <h4> Create <strong>Remind Me Account  :</strong></h4>
+                <br />
+
+                <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+
+                    <%= f.input :first_name %>
+                    <%= f.input :last_name %>
+                    <%= f.input :cellphone_number %>
+                    <%= f.input :email, autofocus: true %>
+
+                    <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                    <% end %><br />
+                    <%= f.input :password, autocomplete: "off" %>
+                    <%= f.input :password_confirmation, autocomplete: "off" %>
+                    <%= f.submit "<span class='glyphicon glyphicon-user'></span> &nbsp;Sign up".html_safe, class: "btn btn-info"%>
+                <% end %>
+
+                  <%= render "devise/shared/links" %>
+            </div>
+
+        </div>
+    </div>
+    </div>
