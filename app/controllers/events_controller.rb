@@ -6,11 +6,15 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    if @events.length == 0
+      flash[:alert] = "You have no events to monitor. Create one now to get started."
+    end
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @event = Event.find(params[:id])
   end
 
   # GET /events/new
@@ -25,7 +29,8 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @user = current_user
+    @event = @user.events.build(event_params)
 
     respond_to do |format|
       if @event.save
@@ -70,6 +75,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :user_id, :reminder_type, :date_due)
+      params.require(:event).permit(:name, :reminder_type, :date_time)
     end
 end
