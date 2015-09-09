@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-    @registration = current_user.registration.new(sign_up_params)
+    @registration = User.new(sign_up_params)
 
     respond_to do |format|
       if @registration.save
@@ -15,7 +15,7 @@ class RegistrationsController < Devise::RegistrationsController
 
 
   def update
-    @registration = current_user.registration
+    @registration = current_user
   respond_to do |format|
     if @registration.update(account_update_params)
       format.html { redirect_to root_path, notice: 'Update was successful.' }
