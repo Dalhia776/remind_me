@@ -16,7 +16,7 @@
                         <%= f.input :email, autofocus: true %>
                         <%= f.input :password, autocomplete: "off" %>
                         <hr />
-                        <a href="index.html" class="btn btn-info"><span class="glyphicon glyphicon-user"></span> &nbsp;<%= f.submit "Log Me In" %></a>&nbsp;
+                        <%= f.button :submit, "Log Me In", class: "btn btn-info" %>
                     <% end %>
 
                     <%= render "devise/shared/links" %>

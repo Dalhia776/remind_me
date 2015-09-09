@@ -17,7 +17,7 @@
     <div class="container">
       <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
+              <span class="icon-bar"><li></li></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
@@ -33,11 +33,10 @@
                         <div class="navbar-collapse collapse ">
                           <% if user_signed_in? %>
                             <ul id="menu-top" class="nav navbar-nav navbar-right">
+                              <li><%= link_to "New Reminder", new_event_path, "data-toggle" => "modal", "data-target" => "#myModal" %></li>
                               <li><%= link_to "Admin Dashboard", rails_admin_path, class: "menu-top-active" %></li>
                               <li><%= link_to "Edit profile", edit_user_registration_path %></li>
                               <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-                          <% else %>
-                              <li><%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %></li>
                           <% end %>
                             </ul>
                         </div>

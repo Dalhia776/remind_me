@@ -25,10 +25,11 @@
                     <% end %><br />
                     <%= f.input :password, autocomplete: "off" %>
                     <%= f.input :password_confirmation, autocomplete: "off" %>
-                    <%= f.submit "<span class='glyphicon glyphicon-user'></span> &nbsp;Sign up".html_safe, class: "btn btn-info"%>
+                    <%= f.button :submit, "Sign up", class:"btn btn-info" %>
                 <% end %>
 
                   <%= render "devise/shared/links" %>
+
             </div>
 
         </div>

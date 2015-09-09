@@ -27,7 +27,7 @@
                           <%= f.input :password, autocomplete: "off" %><i>(leave blank if you don't want to change it)</i>
                           <%= f.input :password_confirmation, autocomplete: "off" %>
                           <%= f.input :current_password, autocomplete: "off" %>
-                          <%= f.submit "<span class='glyphicon glyphicon-user'></span> &nbsp;Update Account".html_safe, class: "btn btn-info"%>
+                          <%= f.button :submit, "Sign up" class:'btn-info' %>
                     <% end %>
 
                     <h3>Cancel my account</h3>
