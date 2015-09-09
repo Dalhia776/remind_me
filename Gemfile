@@ -11,6 +11,7 @@ gem 'cancancan'
 gem 'devise'
 
 gem 'simple_form'
+gem 'faker'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass', '~> 4.4.0'
