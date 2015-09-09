@@ -1,0 +1,27 @@
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="page-head-line">Please Login To Enter </h4>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                     <h4> Login with <strong>Remind Me Account  :</strong></h4>
+                    <br />
+
+                      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+                          <%= f.input :email, autofocus: true %>
+                          <%= f.input :password, autocomplete: "off" %>
+                          <a class="btn btn-info"><span class="glyphicon glyphicon-user"></span> &nbsp;<%= f.submit "Log Me In" %></a>&nbsp;
+                      <% end %>
+
+                      <%= render "devise/shared/links" %>
+                </div>
+
+            </div>
+        </div>
+        </div>
