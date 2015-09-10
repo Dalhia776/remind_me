@@ -1,11 +1,7 @@
       <!--    Striped Rows Table  -->
       <div class="content-wrapper">
         <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h4 class="page-head-line">Remind Me</h4>
-            </div>
-          </div>
+          <h4 class="page-head-line">Remind Me</h4>
           <div class="row">
             <div class="col-md-12">
               <% flash.each do |name,msg| %>
@@ -106,9 +102,20 @@
                   </li>
                 </ul>
               </div>
-              <div class="panel-footer">
+                <div class="panel-footer">
                   <a href="#" class="btn btn-default btn-block"> <i class="glyphicon glyphicon-repeat"></i> Just A Small Footer Button</a>
+                </div>
               </div>
+            </div>
           </div>
         </div>
-      <hr />
+          <hr />
+        </div>
+      </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+      </div>
+    </div>

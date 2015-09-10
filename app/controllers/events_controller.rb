@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    render layout: false
   end
 
   # GET /events/1/edit
