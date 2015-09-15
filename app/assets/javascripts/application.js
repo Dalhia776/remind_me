@@ -19,4 +19,5 @@
 //= require bootstrap-datetimepicker
 //= require pickers
 //= require_tree .
+//= require behaviors
 //= require scripts
