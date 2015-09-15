@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @event.user_id %>
+  <strong>Description:</strong>
+  <%= @event.description %>
 </p>
 
 <p>
@@ -19,6 +19,14 @@
   <strong>Date due:</strong>
   <%= @event.date_time %>
 </p>
+
+<p>
+  <strong>User:</strong>
+  <%= @event.user.full_name %>
+</p>
+
+
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

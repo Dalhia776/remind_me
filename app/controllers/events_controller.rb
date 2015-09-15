@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.order("date_time ASC").page(params[:page]).per(10)
     if @events.length == 0
       flash[:alert] = "You have no events to monitor. Create one now to get started."
     end

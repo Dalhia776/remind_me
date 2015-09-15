@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-
+gem "figaro"
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'rails_admin'
 gem 'cancancan'
@@ -17,10 +17,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass', '~> 4.4.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'kaminari'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'twilio-ruby', '~> 4.2.1'
+gem 'sendgrid-rails', '~> 2.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

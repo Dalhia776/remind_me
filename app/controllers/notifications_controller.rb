@@ -6,14 +6,14 @@ class NotificationsController < ApplicationController
     @notifications = Notification.all
   end
 
-  def create
-    @event = Event.find(notification[:event_id])
-    @notification = @event.notifications.build(notification_params)
+  def new
   end
 
-  def Show
+  def show
     @notification = Notification.find(params[:id])
   end
+
+
 
   def update
     if @notification.update(notification_params)
@@ -41,6 +41,6 @@ class NotificationsController < ApplicationController
   end
 
   def notification_params
-  params.require(:notification).permit(:notification_time, :event_id)
+  params.require(:notification).permit(:notification_datetime, :event_id)
   end
 end

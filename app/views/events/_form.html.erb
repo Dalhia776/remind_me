@@ -12,7 +12,8 @@
   <% end %>
 
     <%= f.input :name, class: "form-control" %>
-    <%= f.input :reminder_type, class: "form-control" %>
+    <%= f.input :description, class: "form-control" %>
+    <%= f.input :reminder_type, :collection => ['Email','Text','Both'], class: "form-control" %>
     <%= f.input :date_time, :as => :datetime_picker %>
     <%= f.button :submit, "Save", class: "btn btn-primary" %>
 <% end %>
