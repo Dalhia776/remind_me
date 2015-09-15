@@ -3,7 +3,7 @@ class NotificationsController < ApplicationController
 
 
   def index
-    @notifications = Notification.all
+    @notifications = Notification.all.order("notification_datetime ASC")
   end
 
   def new

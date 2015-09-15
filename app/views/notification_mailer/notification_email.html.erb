@@ -8,8 +8,8 @@
       <%= image_url 'remindme.png' %>
     </div>
     <h1>Thanks for signing up</h1>
-      <p>Hello <%= @user.name %>!</p>
-      <p> This is a reminder email that you have <%= @notification.notification_time %> your <%= @event.description %> is due for <%= @event.name %>.</p>
-      <p>Have a great day!</p>
+      <p>Hello <%= @user.first_name %>!</p>
+      <p> <%= @notification.message %></p>
+      <p>Have a great day and thank you for all your hard work!</p>
   </body>
 </html>

@@ -6,3 +6,8 @@ $('[data-toggle=collapse]').click(function(){
   	$(this).find("i").toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
 });
 });
+
+// for modal and datetimepicker
+$(document).on('shown.bs.modal', function () {
+  $('.datetimepicker').datetimepicker({});
+})
