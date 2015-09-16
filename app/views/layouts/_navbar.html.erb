@@ -32,7 +32,8 @@
                   <div class="navbar-collapse collapse ">
                     <% if user_signed_in? %>
                       <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><%= link_to "New Reminder", new_event_path, class: "menu-top-active", "data-toggle" => "modal", "data-target" => "#myModal" %></li>
+                        <li><%= link_to "Home", events_path, class: "menu-top-active" %></li>
+                        <li><%= link_to "New Reminder", new_event_path, "data-toggle" => "modal", "data-target" => "#myModal" %></li>
                         <li><%= link_to "Admin Dashboard", rails_admin_path %></li>
                         <li><%= link_to "Edit profile", edit_user_registration_path %></li>
                         <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
