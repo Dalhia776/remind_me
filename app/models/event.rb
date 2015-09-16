@@ -4,7 +4,8 @@ class Event < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :reminder_type
   validates_presence_of :date_time
-
+  validates_presence_of :description
+  
   belongs_to :user
   has_many :notifications
 

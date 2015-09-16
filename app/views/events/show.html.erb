@@ -1,33 +1,30 @@
-<h4>My Reminder</h4>
+<div class="content-wrapper">
+  <div class="container">
+    <h4 class="page-head-line">Update Reminder</h4>
+      <div class="col-xs-12">
+        <p>
+          <strong>Name:</strong>
+          <%= @event.name %>
+        </p>
+        <p>
+          <strong>Description:</strong>
+          <%= @event.description %>
+        </p>
+        <p>
+          <strong>Reminder type:</strong>
+          <%= @event.reminder_type %>
+        </p>
+        <p>
+          <strong>Date due:</strong>
+          <%= @event.date_time %>
+        </p>
+        <p>
+          <strong>User:</strong>
+          <%= @event.user.full_name %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Reminder type:</strong>
-  <%= @event.reminder_type %>
-</p>
-
-<p>
-  <strong>Date due:</strong>
-  <%= @event.date_time %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @event.user.full_name %>
-</p>
-
-
-
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+        <%= link_to 'Edit', edit_event_path(@event) %> |
+        <%= link_to 'Back', events_path %>
+      </div>
+  </div>
+</div>

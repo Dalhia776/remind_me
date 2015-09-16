@@ -1,5 +1,7 @@
 User.delete_all
 Event.delete_all
+Notification.delete_all
+
 name = ['Sabertooth', 'Armor', 'Juggernaut', 'Warpath', 'Cable', 'Pixie', 'Karma', 'Sunspot', 'Legion', 'Deadpool','Toad']
 description = ['Appointment Reminder', 'Follow up paperwork signed', 'Complete ASV', 'Complete Recert', 'Audit chart', 'Follow up meds or supplies']
 reminder_type = ['text', 'email', 'both']

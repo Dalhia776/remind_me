@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.order("date_time ASC").page(params[:page]).per(10)
+    @events = Event.all.order("date_time ASC").page(params[:page]).per(15)
     if @events.length == 0
       flash[:alert] = "You have no events to monitor. Create one now to get started."
     end
@@ -76,6 +76,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :reminder_type, :date_time)
+      params.require(:event).permit(:name, :description, :reminder_type, :date_time)
     end
 end

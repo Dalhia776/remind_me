@@ -41,6 +41,6 @@ class NotificationsController < ApplicationController
   end
 
   def notification_params
-  params.require(:notification).permit(:notification_datetime, :event_id)
+  params.require(:notification).permit(:notification_datetime, :event_id, :message)
   end
 end
