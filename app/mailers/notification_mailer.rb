@@ -7,7 +7,7 @@ class NotificationMailer < ApplicationMailer
     @event = notification.event
     @notification = notification
     category 'NotificationEmails'
-    mail :to => 'lenore776@me.com'
+    mail :to => 'support@dalhia.net'
   end
 
 
