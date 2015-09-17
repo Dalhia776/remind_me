@@ -3,7 +3,7 @@ class Notification < ActiveRecord::Base
   validates_presence_of :notification_datetime
   validates_presence_of :event_id
   validates_presence_of :message
-
+  validates_length_of :message, maximum: 160
   belongs_to :event
 
   scope :two_weeks_before, lambda{|date_time| where('notification_datetime between ? and ?', 2.weeks.until(self.event.date_time), self.event.date_time)}

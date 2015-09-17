@@ -5,9 +5,10 @@ class Event < ActiveRecord::Base
   validates_presence_of :reminder_type
   validates_presence_of :date_time
   validates_presence_of :description
-  
+  validates_length_of :description, maximum: 95
+
   belongs_to :user
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
 
   after_save :create_notifications
 

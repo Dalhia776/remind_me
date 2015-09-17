@@ -3,18 +3,16 @@ class Ability
 
   def initialize(user)
     # Define abilities for the passed in user here. For example:
-    #
       user ||= User.new # guest user (not logged in)
-      if user && user.admin?
+
+      if user.admin?
         can :access, :rails_admin       # only allow admin users to access Rails Admin
         can :dashboard
-        if user.admin?
-          can :manage, :all
-        else user
-          can [:read, :create], Event
-          can [:update, :destroy], Event, :user_id => user.id
-        end
+        can :manage, :all
+      elsif user
+        can :manage, Event
       end
+  end
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
@@ -33,5 +31,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
+
 end

@@ -1,6 +1,7 @@
 class NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  load_and_authorize_resource param_method: :notification_params
 
   def index
     @notifications = Notification.all.order("notification_datetime ASC")

@@ -9,12 +9,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
+  scope :admin?, -> {where(:admin => true)}
   has_many :events
 
-  def admin?
-    admin
-  end
 
   def full_name
     full_name = self.first_name + " " + self.last_name

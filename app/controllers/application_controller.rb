@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :load_event
   around_filter :with_timezone
 
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to main_app.root_path, :alert => exception.message
   end

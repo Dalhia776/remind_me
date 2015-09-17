@@ -1,12 +1,17 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  load_and_authorize_resource param_method: :event_params
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.order("date_time ASC").page(params[:page]).per(15)
-    if @events.length == 0
+    if current_user.admin?
+      @events = Event.all.order("date_time ASC").page(params[:page]).per(15)
+    elsif
+      @events = current_user.events.order("date_time ASC").page(params[:page]).per(15)
+    elsif
+      @events.length == 0
       flash[:alert] = "You have no events to monitor. Create one now to get started."
     end
   end
@@ -19,19 +24,21 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    @user = current_user
     @event = Event.new
     render layout: false
   end
 
   # GET /events/1/edit
   def edit
+    @event = Event.find(params[:id])
   end
 
   # POST /events
   # POST /events.json
   def create
-    @user = current_user
-    @event = @user.events.build(event_params)
+    @event = Event.new(event_params)
+    @event.user = current_user
 
     respond_to do |format|
       if @event.save
@@ -71,7 +78,11 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      if current_user.admin?
+        @event = Event.find(params[:id])
+      elsif
+        @event = current_user.events.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
