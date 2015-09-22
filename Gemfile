@@ -3,17 +3,18 @@ source 'https://rubygems.org'
 # ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-# Use sqlite3 as the database for Active Record
-gem "figaro"
-gem 'bootstrap-sass', '~> 3.3.5'
+
+# This group for authorization & authentication
+gem 'figaro'
 gem 'rails_admin'
 gem 'cancancan'
 gem 'devise'
 
 gem 'simple_form'
 gem 'faker'
-# Use SCSS for stylesheets
+# For styling
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass', '~> 4.4.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -21,12 +22,12 @@ gem 'kaminari'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
+# For Reminders
 gem 'twilio-ruby', '~> 4.2.1'
 gem 'sendgrid-rails', '~> 2.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
+
+# Use jquery as the JavaScript library also used for time & timezones
 gem 'jquery-rails'
 gem 'jquery-cookie-rails'
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'

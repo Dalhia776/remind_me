@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "lenore776@gmail.com"
+  default from: 'support@dalhia.net'
   layout 'mailer'
 end

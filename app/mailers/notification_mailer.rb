@@ -1,5 +1,5 @@
 class NotificationMailer < ApplicationMailer
-  default :from => 'lenore776@gmail.com',
+  default :from => 'support@dalhia.net',
           :subject => 'A notification email for you'
 
   def notification_email(notification)
@@ -7,7 +7,7 @@ class NotificationMailer < ApplicationMailer
     @event = notification.event
     @notification = notification
     category 'NotificationEmails'
-    mail :to => 'support@dalhia.net'
+    mail :to => @user.email
   end
 
 

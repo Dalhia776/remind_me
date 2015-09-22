@@ -22,18 +22,6 @@
           <strong>User:</strong>
           <%= @event.user.full_name %>
         </p>
-        <!-- <p>
-          <strong>Notifications:</strong>
-          <% @event.notifications.each do |notification|%>
-            <ul>
-            <% if notification.notification_datetime > Time.now %>
-              <li><%= notification.notification_datetime %></li>
-            <% end %>
-            </ul>
-          <% end %>
-        </p -->
-
-
       </div>
       <% if can? :update, Event %>
       <%= link_to 'Edit', edit_event_path(@event), class: "btn btn-primary" %>

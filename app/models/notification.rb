@@ -20,7 +20,7 @@ class Notification < ActiveRecord::Base
     reminder = self.message
     message = @client.messages.create(
       :from => @twilio_number,
-      :to => '+17656358422',
+      :to => self.event.user.cellphone_number,
       :body => reminder
     )
     puts message.to
